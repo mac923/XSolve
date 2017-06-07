@@ -1,0 +1,155 @@
+.l-header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 1rem 0;
+    z-index: 999;
+    background: transparentize($bg-color-light, 0.1);
+
+    @media (max-width: $breakpoint-switch){
+        background: transparent;
+    }
+}
+
+.l-header__content{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.l-header__logo {
+    background: url(../images/logo.svg);
+    width: 200px;
+    height: 50px;
+    display: block;
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
+
+    @media (max-width: $sm){
+        background: url(../images/logo-mobile.svg);
+        background-repeat: no-repeat;
+    }
+}
+
+.l-header__nav{
+    display: block;
+    margin-left: auto;
+}
+
+.l-header__nav-list {
+    list-style: none;
+
+    @media (max-width: $breakpoint-menu){
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $bg-color-light;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: 0.8s;
+    }
+}
+
+// Is open ---
+.l-header__nav.is-open .l-header__nav-list{
+    transform: translateX(0);
+}
+
+.l-header__nav-item {
+    display: inline-block;
+
+    @media (max-width: $breakpoint-menu){
+        margin: 2em 0;
+    }
+}
+
+.l-header__nav-link {
+    padding: 0.7em 1.5em;
+    color: #000;
+    text-decoration: none;
+    font-size: 0.85rem;
+    position: relative;
+
+    @media (max-width: $breakpoint-menu){
+        font-size: 1.4rem;
+    }
+
+    &.primary{
+        padding: 0.7em 2em;
+        border: 2px solid;
+        border-radius: 50px;
+        margin-left: 1em;
+
+        @media (max-width: $breakpoint-menu){
+            margin-left: 0;
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px;
+        @include gradient($primary-color--one, $primary-color--two);
+        transition: 0.5s;
+        border-radius: 3px;
+    }
+
+    &:hover::after{
+        width: 100%;
+    }
+}
+
+#l-header__menu-btn{
+    z-index: 10;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    outline: none;
+
+    @media (min-width: $breakpoint-menu-min){
+        display: none;
+    }
+}
+
+.menu-icon {
+    width: 1.7rem;
+    display: block;
+    margin: 0.25rem 0;
+    transition: 0.5s;
+}
+
+#l-header__menu-btn.is-open .menu-icon.center {
+    opacity: 0;
+}
+#l-header__menu-btn.is-open .menu-icon.down{
+    transform: rotate(-45deg);
+    transform-origin: 0.19em;
+}
+#l-header__menu-btn.is-open .menu-icon.up{
+    transform: rotate(45deg);
+    transform-origin: 0.19em;
+}
+
+// For RTL
+.l-header.rtl .l-header__nav{
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.l-header.rtl .l-header__logo {
+    background-position: center right;
+}

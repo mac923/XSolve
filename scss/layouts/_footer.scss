@@ -1,0 +1,32 @@
+.l-footer__list {
+    list-style: none;
+    padding: 0;
+}
+
+.l-footer__item {
+    margin-bottom: 0.5rem;
+}
+
+.l-footer__link {
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 300;
+    line-height: 1.35em;
+}
+
+.l-footer__content{
+    position: relative;
+    padding-top: 2rem !important;
+
+    &:before {
+        content: "";
+        position: absolute;
+        left: 1rem;
+        top: 0;
+        display: block;
+        width: calc(100% - 2rem);
+        height: 2px;
+        @include gradient($primary-color--one, $primary-color--two);
+    }
+}

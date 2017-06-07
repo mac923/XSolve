@@ -1,0 +1,51 @@
+.c-user {
+    position: relative;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 6px 15px rgba(36,37,38,0.08);
+    transition: 0.5s;
+    padding: 2rem;
+    padding-bottom: 4rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s both;
+
+    @media (max-width: $sm){
+        margin-bottom: 1rem;
+    }
+
+    &:hover{
+        box-shadow: 5px 12px 20px rgba(36,37,38,0.13);
+    }
+
+    p{
+        font-size: 0.8rem;
+        line-height: 1.5em;
+        font-weight: 300;
+    }
+}
+
+.c-user__name {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.c-user__mail {
+    font-size: 0.75rem;
+    color: $primary-color--one;
+    margin: 0.5em 0;
+    margin-bottom: 1.5em;
+}
+
+
+
+@keyframes fadeIn {
+    0%{
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Page for XSolve</title>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="scss/lib/bootstrap.css">
+        <link rel="stylesheet" href="scss/master.css">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    </head>
+    <body  onload="loadUsers()">
+        <!-- Header -->
+        <header class="l-header">
+            <div class="l-header__content u-container">
+                <!-- Logo -->
+                <div class="l-header__logo-wrapper">
+                    <a href="#" class="l-header__logo">People</a>
+                </div>
+
+                <!-- Text direction switch -->
+                <div class="o-switcher__wrapper">
+                    <label class="o-switcher">
+                        <span class="o-switcher__label ltr">
+                            ltr
+                            <img src="images/icon-left-align.svg" alt="left-align">
+                        </span>
+                        <span class="o-switcher__label rtl">
+                            <img src="images/icon-right-align.svg" alt="right-align">
+                            rtl
+                        </span>
+                        <input type="checkbox" id="switcher">
+                        <div class="o-switcher__slider"></div>
+                    </label>
+                </div>
+
+                <!-- Navigation -->
+                <nav class="l-header__nav">
+                    <ul class="l-header__nav-list">
+                        <li class="l-header__nav-item">
+                            <a href="#" class="l-header__nav-link">About</a>
+                        </li>
+                        <li class="l-header__nav-item">
+                            <a href="#" class="l-header__nav-link">Blog</a>
+                        </li>
+                        <li class="l-header__nav-item">
+                            <a href="#" class="l-header__nav-link">Contact</a>
+                        </li>
+                    </ul>
+                    <button type="button"
+                        name="button"
+                        id="l-header__menu-btn">
+                        <img src="images/menu-icon.svg" class="menu-icon up" alt="menu-icon">
+                        <img src="images/menu-icon.svg" class="menu-icon center" alt="menu-icon">
+                        <img src="images/menu-icon.svg" class="menu-icon down" alt="menu-icon">
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Content -->
+        <main>
+            <!-- Jumbo -->
+            <section class="jumbo txt-direction">
+                <div class="jumbo__content u-container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="jumbo__txt-wrapper ">
+                                <h1>See, hear and feal the diffrence.</h1>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Ut enim ad minim veniam, quis nostr.</p>
+
+                                <div class="o-scroll-down">
+                                    Scroll down
+                                    <img src="images/icon-arrow.svg"
+                                        alt="arrow"
+                                        class="o-scroll-down__arrow">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jumbo__img-wrapper col-sm-6">
+                            <img src="images/group-of-people.png"
+                                alt="group of people"
+                                class="jumbo__img img-responsive">
+                        </div>
+                    </div>
+                </div>
+
+                <img src="images/bottom-wave.svg"
+                    alt="wave"
+                    class="jumbo__bottom-wave img-responsive">
+            </section>
+
+            <!-- Users -->
+            <section class="users">
+                <div class="users__content u-container">
+                    <div class="row" id="users">
+
+                    </div>
+                    <!-- Buttons -->
+                    <div class="o-btn__container">
+                        <button id="load" type="button" onclick="simulateReq()"
+                            class="o-btn o-btn-primary">
+                            Load more
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quotes -->
+            <aside class="quote">
+                <div class="quote__content">
+                    <img src="images/quote-icon.svg"
+                        alt="quote"
+                        class="quote__icon">
+                    <p>In alii insolens assentior per, et altera vocibus eligendi cum.
+                        Per id percipitur mediocritatem, nemore suscipiantur mel cu. </p>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="l-footer">
+            <div class="l-footer__content u-container">
+                <nav class="row">
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h4 class="l-footer__list-header">Learn more</h4>
+                                <ul class="l-footer__list">
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Tour</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">New Features</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Changelog</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Customers</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Enterprise</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Pricing & Plans</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <h4 class="l-footer__list-header">About</h4>
+                                <ul class="l-footer__list">
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Blog</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Company</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Jobs</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <h4 class="l-footer__list-header">Support</h4>
+                                <ul class="l-footer__list">
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Community</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Contact Us</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Tutorials</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-xs-6">
+                                <h4 class="l-footer__list-header">Features</h4>
+                                <ul class="l-footer__list">
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Mockups</a>
+                                    </li>
+                                    <li class="l-footer__item">
+                                        <a href="#" class="l-footer__link">Prototyping</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </nav>
+                <div class="aditional-info">
+                    <p>© 2017 Maciej Chmiel  |  All Rights Reserved </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/menu.js"></script>
+        <script type="text/javascript" src="js/switch.js"></script>
+        <script type="text/javascript" src="js/jumbo-height.js"></script>
+        <script type="text/javascript" src="js/load.js"></script>
+    </body>
+</html>
